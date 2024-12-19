@@ -37,7 +37,16 @@ const App = () => {
   };
 
   const handleDisplayUser = () => {
-    setIsSubmitted(true);
+    if (
+      formData.firstname.trim() &&
+      formData.lastname.trim() &&
+      formData.age &&
+      formData.favoriteFoods.length > 0
+    ) {
+      setIsSubmitted(true);
+    } else {
+      alert('Please fill out all fields and select at least one favorite food.');
+    }
   };
 
   const handleClear = () => {
